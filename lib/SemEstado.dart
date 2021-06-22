@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'CadastroPage.dart';
 import 'ComEstado.dart';
 import 'Tema.dart';
 
@@ -14,12 +15,17 @@ class SemEstado extends StatelessWidget{
      builder: (context, child)
      {
       return MaterialApp(
-     home: ComEstado(),
+     //home: CadastroPage(),
      theme: ThemeData(
        brightness: Tema.intance.isThemeDark
        ? Brightness.dark
        : Brightness.light,
      ),
+     initialRoute: '/',
+     routes: {
+       '/home': (context) => ComEstado(),
+       '/': (context) => CadastroPage(),
+     },
    );
      });
   }
