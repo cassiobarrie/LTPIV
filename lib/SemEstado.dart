@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'CadastroPage.dart';
-import 'ComEstado.dart';
+import 'agenda.dart';
+import 'home.dart';
 import 'Tema.dart';
 
 class SemEstado extends StatelessWidget{
@@ -19,12 +20,13 @@ class SemEstado extends StatelessWidget{
      theme: ThemeData(
        brightness: Tema.intance.isThemeDark
        ? Brightness.dark
-       : Brightness.light,
+       : Brightness.dark,
      ),
-     initialRoute: '/',
+     initialRoute: '/home',
      routes: {
-       '/home': (context) => ComEstado(),
-       '/': (context) => CadastroPage(),
+       '/home': (context) => Home(),
+       '/cad': (context) => CadastroPage(),
+       '/ag': (context) => Agenda(),
      },
    );
      });
